@@ -3,84 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clixio - Digital Marketing That Drives Results</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Clixio - Premier Dental Marketing Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B35',
+                        'primary-dark': '#E55722',
+                        'secondary': '#2196F3',
+                        'dark': '#2C3E50',
+                        'light-gray': '#F8F9FA'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="font-inter text-dark">
     <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <h2>Clixio</h2>
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-tooth text-xl lg:text-2xl text-primary"></i>
+                    <h2 class="text-xl lg:text-2xl xl:text-3xl font-bold text-primary">Clixio</h2>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#results">Results</a></li>
-                    <li class="dropdown">
-                        <a href="#resources">Resources <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#insights">Insights</a></li>
-                            <li><a href="#ebook">eBook</a></li>
-                            <li><a href="#projects">Our Projects</a></li>
-                            <li><a href="#webinars">Webinars</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact Us</a></li>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden lg:flex items-center space-x-8">
+                    <li><a href="#home" class="text-dark hover:text-primary font-medium transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-dark hover:text-primary font-medium transition-colors">About</a></li>
+                    <li><a href="#services" class="text-dark hover:text-primary font-medium transition-colors">Services</a></li>
+                    <li><a href="#results" class="text-dark hover:text-primary font-medium transition-colors">Results</a></li>
+                    <li><a href="#testimonials" class="text-dark hover:text-primary font-medium transition-colors">Reviews</a></li>
+                    <li><a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all duration-300 hover:shadow-lg">Get Started</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                        <span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="menu-line-1"></span>
+                        <span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="menu-line-2"></span>
+                        <span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="menu-line-3"></span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg" id="mobile-menu">
+                <div class="py-4 space-y-2">
+                    <a href="#home" class="block px-4 py-3 text-dark hover:text-primary hover:bg-gray-50 font-medium transition-all rounded-lg">Home</a>
+                    <a href="#about" class="block px-4 py-3 text-dark hover:text-primary hover:bg-gray-50 font-medium transition-all rounded-lg">About</a>
+                    <a href="#services" class="block px-4 py-3 text-dark hover:text-primary hover:bg-gray-50 font-medium transition-all rounded-lg">Services</a>
+                    <a href="#results" class="block px-4 py-3 text-dark hover:text-primary hover:bg-gray-50 font-medium transition-all rounded-lg">Results</a>
+                    <a href="#testimonials" class="block px-4 py-3 text-dark hover:text-primary hover:bg-gray-50 font-medium transition-all rounded-lg">Reviews</a>
+                    <div class="px-4 pt-2">
+                        <a href="#contact" class="block bg-primary text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-primary-dark transition-all">Get Started</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="hero-pattern"></div>
-            <div class="hero-gradient"></div>
-        </div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">DIGITAL MARKETING CONSULTATION</div>
-                <h1 class="hero-title">YOUR DIGITAL EDGE STARTS HERE.</h1>
-                <p class="hero-subtitle">CONVERSION-FIRST DIGITAL MARKETING THAT DRIVES GROWTH</p>
-                <button class="cta-button primary">BOOK YOUR GROWTH CALL</button>
-                <div class="hero-features">
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Free Consultation</span>
+    <section class="pt-20 lg:pt-24 bg-gradient-to-br from-orange-50 via-white to-blue-50 overflow-hidden relative" id="home">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5" style="background-image: url('./images/hero-dental-office.jpg');"></div>
+        <div class="container mx-auto px-4 lg:px-8 py-12 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Hero Text -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-tooth mr-2"></i>
+                        #1 Dental Marketing Agency
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Proven Results</span>
+                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark mb-6 leading-tight">
+                        Transform Your <span class="text-primary">Dental Practice</span> Into a Patient Magnet
+                    </h1>
+                    <p class="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
+                        We specialize in proven dental marketing strategies that fill your appointment book with high-quality patients. Get more leads, boost revenue, and dominate your local market.
+                    </p>
+                    
+                    <!-- Features -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span class="text-dark font-medium">450% Average ROI</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span class="text-dark font-medium">500+ Successful Practices</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3"></i>
+                            <span class="text-dark font-medium">30-Day Results Guarantee</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Expert Team</span>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                            Get Free Marketing Audit
+                        </button>
+                        <button class="border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary hover:text-white transition-all duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Watch Success Stories
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative">
+                    <!-- Main Hero Card -->
+                    <div class="bg-white rounded-3xl shadow-2xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500 hover:shadow-3xl">
+                        <div class="relative overflow-hidden rounded-2xl mb-4">
+                            <img src="./images/dental-marketing-dashboard.jpg" alt="Dental Marketing Dashboard" class="w-full h-64 lg:h-80 object-cover transition-transform duration-700 hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-chart-line mr-1"></i>
+                                Live Results
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl hover:from-primary/20 hover:to-primary/10 transition-all duration-300">
+                                <div class="text-2xl lg:text-3xl font-bold text-primary animate-pulse">+350%</div>
+                                <div class="text-sm text-gray-600 font-medium">Patient Growth</div>
+                            </div>
+                            <div class="text-center p-4 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-xl hover:from-secondary/20 hover:to-secondary/10 transition-all duration-300">
+                                <div class="text-2xl lg:text-3xl font-bold text-secondary animate-pulse">$2.4M</div>
+                                <div class="text-sm text-gray-600 font-medium">Revenue Generated</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                        <i class="fas fa-tooth text-white text-2xl"></i>
+                    </div>
+                    
+                    <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-secondary to-blue-600 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                        <i class="fas fa-star text-white text-xl"></i>
+                    </div>
+                    
+                    <!-- Background Decoration -->
+                    <div class="absolute inset-0 -z-10">
+                        <div class="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+                        <div class="absolute bottom-10 right-10 w-24 h-24 bg-secondary/10 rounded-full blur-2xl animate-pulse"></div>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Digital Marketing Team" />
-                    <div class="floating-card">
-                        <div class="card-content">
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 lg:py-24 bg-white" id="about">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- About Content -->
+                <div>
+                    <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-award mr-2"></i>
+                        Why Choose Clixio
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">Transforming Dental Practices Through Strategic Marketing</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        With over 10 years of experience in dental marketing, we've helped hundreds of practices grow their patient base and increase revenue through proven digital strategies.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-trophy text-primary text-xl"></i>
                             </div>
-                            <p>"Exceptional results!"</p>
-                            <span>- Client Review</span>
+                            <div>
+                                <h4 class="font-bold text-dark mb-2">Industry Expertise</h4>
+                                <p class="text-gray-600">Specialized knowledge in dental marketing with proven track record.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-chart-line text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-2">Measurable Results</h4>
+                                <p class="text-gray-600">Data-driven strategies that deliver real, trackable growth.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-handshake text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-2">Dedicated Support</h4>
+                                <p class="text-gray-600">Personal account managers who understand your practice goals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Learn More About Us
+                    </button>
+                </div>
+
+                <!-- About Images -->
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="./images/dental-clinic-interior.jpg" alt="Modern Dental Clinic" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <img src="./images/dental-equipment.jpg" alt="Advanced Dental Equipment" class="w-full h-32 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        </div>
+                        <div class="space-y-4 mt-8">
+                            <img src="./images/dental-procedure.jpg" alt="Dental Procedure" class="w-full h-32 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <img src="./images/dental-reception.jpg" alt="Dental Reception" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary">500+</div>
+                                <div class="text-sm text-gray-600">Happy Practices</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,287 +244,851 @@
         </div>
     </section>
 
-    <!-- Trusted By Section -->
-    <section class="trusted-by">
-        <div class="container">
-            <h3>Trusted by Businesses and Organizations Nationwide</h3>
-            <div class="client-logos">
-                <div class="logo-item">
-                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Tech Company" />
-                </div>
-                <div class="logo-item">
-                    <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Startup" />
-                </div>
-                <div class="logo-item">
-                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Business" />
-                </div>
-                <div class="logo-item">
-                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Enterprise" />
-                </div>
-                <div class="logo-item">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Corporation" />
-                </div>
+    <!-- Stats Section -->
+    <section class="py-16 lg:py-24 bg-dark text-white relative overflow-hidden" id="results">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('./images/dental-office-modern.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-primary/20 to-secondary/20"></div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Results That Speak for Themselves</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Our proven strategies deliver measurable results that grow your practice and increase revenue.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section class="results" id="results">
-        <div class="container">
-            <div class="results-header">
-                <h2>Results That Drive Business Growth</h2>
-                <button class="cta-button secondary">DRIVE YOUR GROWTH</button>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">250%</div>
-                    <p>Average increase in lead generation with our digital campaigns.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-2 text-white stat-number" data-target="450">450%</div>
+                    <div class="text-gray-300 font-medium">Average ROI</div>
+                    <div class="text-sm text-gray-400 mt-2">Return on investment for our clients</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">450%</div>
-                    <p>Our clients' average ROI in 2024 from digital marketing efforts.</p>
+                
+                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl text-white"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-2 text-white stat-number" data-target="500">500+</div>
+                    <div class="text-gray-300 font-medium">Practices Served</div>
+                    <div class="text-sm text-gray-400 mt-2">Successful dental practices</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">180%</div>
-                    <p>Average growth in organic website traffic with our proven SEO strategies.</p>
+                
+                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-white"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-2 text-white stat-number" data-target="350">350%</div>
+                    <div class="text-gray-300 font-medium">Patient Growth</div>
+                    <div class="text-sm text-gray-400 mt-2">Average increase in appointments</div>
+                </div>
+                
+                <div class="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-2xl text-white"></i>
+                    </div>
+                    <div class="text-4xl font-bold mb-2 text-white stat-number" data-target="98">98%</div>
+                    <div class="text-gray-300 font-medium">Client Satisfaction</div>
+                    <div class="text-sm text-gray-400 mt-2">Would recommend our services</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Custom Digital Marketing Solutions for Your Business</h2>
-            <button class="cta-button secondary">EXPLORE ALL SERVICES</button>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI Marketing</h3>
-                    <p>Data-driven strategies tailored for growth</p>
+    <section class="py-16 lg:py-24 bg-light-gray" id="services">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Our Services
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-video"></i>
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Complete Dental Marketing Solutions</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">From SEO and PPC to social media and reputation management, we offer everything your dental practice needs to thrive online.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SEO Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-primary overflow-hidden">
+                    <div class="relative mb-6">
+                        <img src="./images/dental-seo.jpg" alt="Dental SEO" class="w-full h-48 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-primary/80 rounded-xl flex items-center justify-center hover:bg-primary/70 transition-all duration-300">
+                            <i class="fas fa-search text-4xl text-white"></i>
+                        </div>
                     </div>
-                    <h3>Video Marketing</h3>
-                    <p>High-quality, story-driven visuals.</p>
+                    <h3 class="text-xl font-bold text-dark mb-4">Dental SEO</h3>
+                    <p class="text-gray-600 mb-6">Dominate local search results and attract patients actively searching for dental services in your area.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span class="text-gray-700">Local SEO optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span class="text-gray-700">Google My Business management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span class="text-gray-700">Content marketing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span class="text-gray-700">Technical SEO</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-primary text-primary py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-share-alt"></i>
+
+                <!-- PPC Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-secondary overflow-hidden">
+                    <div class="relative mb-6">
+                        <img src="./images/dental-analytics.jpg" alt="PPC Analytics" class="w-full h-48 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-secondary/80 rounded-xl flex items-center justify-center hover:bg-secondary/70 transition-all duration-300">
+                            <i class="fas fa-mouse-pointer text-4xl text-white"></i>
+                        </div>
                     </div>
-                    <h3>Social Media Management</h3>
-                    <p>Build your brand's online presence.</p>
+                    <h3 class="text-xl font-bold text-dark mb-4">PPC Advertising</h3>
+                    <p class="text-gray-600 mb-6">Targeted Google Ads campaigns that convert clicks into patient appointments with proven ROI.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span class="text-gray-700">Google Ads management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span class="text-gray-700">Facebook advertising</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span class="text-gray-700">Landing page optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span class="text-gray-700">Conversion tracking</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-secondary text-secondary py-3 rounded-full font-semibold hover:bg-secondary hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+
+                <!-- Website Design Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-green-500 overflow-hidden">
+                    <div class="relative mb-6">
+                        <img src="./images/modern-dental-office.jpg" alt="Modern Dental Website" class="w-full h-48 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-green-500/80 rounded-xl flex items-center justify-center hover:bg-green-500/70 transition-all duration-300">
+                            <i class="fas fa-globe text-4xl text-white"></i>
+                        </div>
                     </div>
-                    <h3>CRO</h3>
-                    <p>Turn visitors into qualified leads.</p>
+                    <h3 class="text-xl font-bold text-dark mb-4">Website Design</h3>
+                    <p class="text-gray-600 mb-6">Professional, mobile-optimized websites that convert visitors into patients and build trust.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Mobile-responsive design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Appointment booking system</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Patient portal integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">SEO optimization</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-green-500 text-green-500 py-3 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+
+                <!-- Social Media Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-purple-500 overflow-hidden">
+                    <div class="relative mb-6">
+                        <img src="./images/dental-smile.jpg" alt="Social Media Marketing" class="w-full h-48 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-purple-500/80 rounded-xl flex items-center justify-center hover:bg-purple-500/70 transition-all duration-300">
+                            <i class="fas fa-share-alt text-4xl text-white"></i>
+                        </div>
                     </div>
-                    <h3>SEO & Paid Ads</h3>
-                    <p>Drive measurable results and ROI.</p>
+                    <h3 class="text-xl font-bold text-dark mb-4">Social Media Marketing</h3>
+                    <p class="text-gray-600 mb-6">Build your brand presence and engage with patients across all major social media platforms.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-purple-500 mr-3"></i>
+                            <span class="text-gray-700">Content creation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-purple-500 mr-3"></i>
+                            <span class="text-gray-700">Community management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-purple-500 mr-3"></i>
+                            <span class="text-gray-700">Social media advertising</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-purple-500 mr-3"></i>
+                            <span class="text-gray-700">Analytics & reporting</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-purple-500 text-purple-500 py-3 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-book"></i>
+
+                <!-- Reputation Management Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-yellow-500 overflow-hidden">
+                    <div class="relative mb-6">
+                        <img src="./images/patient-consultation.jpg" alt="Patient Reviews" class="w-full h-48 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-yellow-500/80 rounded-xl flex items-center justify-center hover:bg-yellow-500/70 transition-all duration-300">
+                            <i class="fas fa-star text-4xl text-white"></i>
+                        </div>
                     </div>
-                    <h3>Best Marketing Resources</h3>
-                    <p>Book, Podcast, and Events</p>
+                    <h3 class="text-xl font-bold text-dark mb-4">Reputation Management</h3>
+                    <p class="text-gray-600 mb-6">Monitor and improve your online reputation with proactive review management and response strategies.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            <span class="text-gray-700">Review monitoring</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            <span class="text-gray-700">Response management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            <span class="text-gray-700">Review generation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-500 mr-3"></i>
+                            <span class="text-gray-700">Crisis management</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-yellow-500 text-yellow-500 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Analytics Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-pink-500 overflow-hidden">
+                    <div class="relative mb-6">
+                        <img src="./images/dental-technology.jpg" alt="Analytics Dashboard" class="w-full h-48 object-cover rounded-xl">
+                        <div class="absolute inset-0 bg-pink-500/80 rounded-xl flex items-center justify-center hover:bg-pink-500/70 transition-all duration-300">
+                            <i class="fas fa-chart-bar text-4xl text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Analytics & Reporting</h3>
+                    <p class="text-gray-600 mb-6">Track your marketing performance with comprehensive analytics and detailed monthly reports.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-3"></i>
+                            <span class="text-gray-700">Performance tracking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-3"></i>
+                            <span class="text-gray-700">Monthly reports</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-3"></i>
+                            <span class="text-gray-700">ROI analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-3"></i>
+                            <span class="text-gray-700">Strategy optimization</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-transparent border-2 border-pink-500 text-pink-500 py-3 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300">
+                        Learn More
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resources Section -->
-    <section class="resources" id="resources">
-        <div class="container">
-            <div class="resources-content">
-                <div class="resources-text">
-                    <h2>Your Digital Marketing Resource Center</h2>
-                    <button class="cta-button secondary">EXPLORE ALL RESOURCES</button>
-                </div>
-                <div class="resources-visual">
-                    <div class="resources-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team collaboration" />
+    <!-- How It Works Section -->
+    <section class="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-2xl lg:text-3xl font-bold text-dark mb-3">
+                    Our <span class="text-primary">Process</span>
+                </h2>
+                <p class="text-gray-600 max-w-xl mx-auto">
+                    Simple steps to grow your practice
+                </p>
+            </div>
+
+            <!-- Progress Bar Container -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="relative">
+                    <!-- Progress Background -->
+                    <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary via-secondary to-green-500 rounded-full transform origin-left animate-pulse"></div>
                     </div>
-                    <div class="resources-grid">
-                        <div class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-chart-line"></i>
+                    
+                    <!-- Process Steps -->
+                    <div class="flex justify-between items-center mt-8">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-search text-white text-sm"></i>
                             </div>
-                            <h4>Growth Insights</h4>
-                            <p>Web-based series with actionable tips</p>
+                            <h4 class="font-semibold text-dark text-sm mb-1">Analyze</h4>
+                            <p class="text-xs text-gray-500 text-center max-w-20">Audit current marketing</p>
                         </div>
-                        <div class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-mobile-alt"></i>
+
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-lightbulb text-white text-sm"></i>
                             </div>
-                            <h4>ClixioDaily Mobile App</h4>
-                            <p>365 days of marketing inspiration and strategies</p>
+                            <h4 class="font-semibold text-dark text-sm mb-1">Strategy</h4>
+                            <p class="text-xs text-gray-500 text-center max-w-20">Custom plan</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-rocket text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-dark text-sm mb-1">Launch</h4>
+                            <p class="text-xs text-gray-500 text-center max-w-20">Execute campaigns</p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-chart-line text-white text-sm"></i>
+                            </div>
+                            <h4 class="font-semibold text-dark text-sm mb-1">Optimize</h4>
+                            <p class="text-xs text-gray-500 text-center max-w-20">Scale results</p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="bg-white rounded-xl shadow-md p-6 max-w-3xl mx-auto mb-8">
+                <div class="grid grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-xl font-bold text-primary mb-1">2-4 Weeks</div>
+                        <div class="text-xs text-gray-500">Setup & Launch</div>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold text-secondary mb-1">1-3 Months</div>
+                        <div class="text-xs text-gray-500">See Growth</div>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold text-green-500 mb-1">3+ Months</div>
+                        <div class="text-xs text-gray-500">Full Results</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <button class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    Start Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section class="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-camera mr-2"></i>
+                    Our Work in Action
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Successful Dental Practices We've Transformed</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">See the beautiful dental practices and success stories from our marketing campaigns</p>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="./images/dental-office-modern.jpg" alt="Modern Dental Office" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Modern Practice Design</h4>
+                            <p class="text-sm text-gray-200">Contemporary dental office aesthetics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="./images/dental-checkup.jpg" alt="Dental Checkup" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Patient Care Excellence</h4>
+                            <p class="text-sm text-gray-200">Quality dental care services</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="./images/dental-surgery.jpg" alt="Dental Surgery" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Advanced Procedures</h4>
+                            <p class="text-sm text-gray-200">State-of-the-art dental surgery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="./images/dental-waiting-room.jpg" alt="Dental Waiting Room" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Comfortable Environment</h4>
+                            <p class="text-sm text-gray-200">Welcoming patient experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="./images/dental-equipment.jpg" alt="Professional Dental Equipment" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Professional Equipment</h4>
+                            <p class="text-sm text-gray-200">Latest dental technology</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="./images/happy-patient.jpg" alt="Happy Patient" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-bold text-lg">Satisfied Patients</h4>
+                            <p class="text-sm text-gray-200">Happy, healthy smiles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+                <button class="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-dark transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <i class="fas fa-images mr-2"></i>
+                    View More Success Stories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Results Section -->
+    <section class="py-16 lg:py-24 bg-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-5" style="background-image: url('./images/dental-analytics.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-primary/10 to-secondary/10"></div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-chart-bar mr-2"></i>
+                    Real Results
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Before & After: Practice Transformations</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto">See how our dental marketing strategies have transformed struggling practices into thriving businesses</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <img src="./images/dental-office-modern.jpg" alt="Practice Transformation" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Case Study #1
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4 text-white">Smile Dental Group</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center p-4 bg-red-500/20 rounded-xl border border-red-500/30">
+                            <div class="text-sm text-red-300 mb-1">BEFORE</div>
+                            <div class="text-2xl font-bold text-red-400">12</div>
+                            <div class="text-xs text-red-300">Patients/Month</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-500/20 rounded-xl border border-green-500/30">
+                            <div class="text-sm text-green-300 mb-1">AFTER</div>
+                            <div class="text-2xl font-bold text-green-400">127</div>
+                            <div class="text-xs text-green-300">Patients/Month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Revenue Growth</span>
+                            <span class="text-primary font-bold">+958%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Online Visibility</span>
+                            <span class="text-secondary font-bold">+1,200%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Patient Retention</span>
+                            <span class="text-green-400 font-bold">+340%</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-full font-semibold transition-colors duration-300">
+                        View Full Case Study
+                    </button>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <img src="./images/dental-clinic-interior.jpg" alt="Practice Transformation" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Case Study #2
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4 text-white">Premier Dental Care</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center p-4 bg-red-500/20 rounded-xl border border-red-500/30">
+                            <div class="text-sm text-red-300 mb-1">BEFORE</div>
+                            <div class="text-2xl font-bold text-red-400">$8K</div>
+                            <div class="text-xs text-red-300">Monthly Revenue</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-500/20 rounded-xl border border-green-500/30">
+                            <div class="text-sm text-green-300 mb-1">AFTER</div>
+                            <div class="text-2xl font-bold text-green-400">$47K</div>
+                            <div class="text-xs text-green-300">Monthly Revenue</div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Lead Generation</span>
+                            <span class="text-primary font-bold">+675%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Conversion Rate</span>
+                            <span class="text-secondary font-bold">+285%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Brand Awareness</span>
+                            <span class="text-green-400 font-bold">+890%</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-secondary hover:bg-blue-600 text-white py-3 rounded-full font-semibold transition-colors duration-300">
+                        View Full Case Study
+                    </button>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
+                    <div class="relative mb-6 overflow-hidden rounded-xl">
+                        <img src="./images/dental-reception.jpg" alt="Practice Transformation" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Case Study #3
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-4 text-white">Bright Smile Clinic</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center p-4 bg-red-500/20 rounded-xl border border-red-500/30">
+                            <div class="text-sm text-red-300 mb-1">BEFORE</div>
+                            <div class="text-2xl font-bold text-red-400">2.1</div>
+                            <div class="text-xs text-red-300">Star Rating</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-500/20 rounded-xl border border-green-500/30">
+                            <div class="text-sm text-green-300 mb-1">AFTER</div>
+                            <div class="text-2xl font-bold text-green-400">4.9</div>
+                            <div class="text-xs text-green-300">Star Rating</div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Online Reviews</span>
+                            <span class="text-primary font-bold">+1,450%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Appointment Bookings</span>
+                            <span class="text-secondary font-bold">+520%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Patient Referrals</span>
+                            <span class="text-green-400 font-bold">+780%</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-full font-semibold transition-colors duration-300">
+                        View Full Case Study
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="text-center mt-16">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
+                    <i class="fas fa-trophy text-primary mr-2"></i>
+                    <span class="text-white font-semibold">Ready to be our next success story?</span>
+                </div>
+                <button class="bg-gradient-to-r from-primary to-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Get Your Free Marketing Audit
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What our Clients Say About Us</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card-large">
-                    <p>"Clixio completely transformed our online presence! After launching our new website and marketing campaigns, we saw a 45% increase in leads within the first three months. Their team is creative, responsive, and always one step ahead."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" />
-                        </div>
-                        <div class="author-info">
-                            <strong>Sarah Johnson</strong>
-                            <span>CEO, TechStart</span>
-                        </div>
-                    </div>
+    <section class="py-16 lg:py-24 bg-white" id="testimonials">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Client Reviews
                 </div>
-                <div class="testimonial-card-large">
-                    <p>"Working with Clixio has been a game-changer for our business. The new website not only looks amazing but functions seamlessly. Within weeks of launch, we noticed a significant uptick in conversions and online engagement."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Mike Chen" />
-                        </div>
-                        <div class="author-info">
-                            <strong>Mike Chen</strong>
-                            <span>Founder, GrowthCo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card-large">
-                    <p>"Since partnering with Clixio, we've seen a 60% increase in website traffic and a 35% boost in qualified leads — all within the first 90 days. Their team knows digital marketing inside and out."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Lisa Rodriguez" />
-                        </div>
-                        <div class="author-info">
-                            <strong>Lisa Rodriguez</strong>
-                            <span>Marketing Director, InnovateLab</span>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Hear from dental professionals who have transformed their practices with our marketing solutions.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Process Section -->
-    <section class="process">
-        <div class="container">
-            <h2>Our Process</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Digital-Footprint Consultation</h3>
-                    <p>We analyze your business's online presence, customer engagement, and opportunities for growth.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Clixio transformed our practice completely. We went from struggling to fill appointments to being booked solid for months ahead. Their SEO strategy alone brought us 300% more leads!"</p>
+                    <div class="flex items-center">
+                        <img src="./images/doctor-portrait.jpg" alt="Dr. Sarah Johnson" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <div class="font-semibold text-dark">Dr. Sarah Johnson</div>
+                            <div class="text-sm text-gray-500">Johnson Family Dentistry</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-lg font-bold text-primary">+285%</div>
+                                <div class="text-xs text-gray-500">New Patients</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-secondary">$180K</div>
+                                <div class="text-xs text-gray-500">Revenue Increase</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Customized & Bespoke Marketing Strategy</h3>
-                    <p>A tailored plan designed for your business goals—no cookie-cutter solutions.</p>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"The team at Clixio understands dental marketing like no other agency. Their PPC campaigns have consistently delivered high-quality patients at a great ROI. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <img src="./images/dental-team.jpg" alt="Dr. Michael Chen" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <div class="font-semibold text-dark">Dr. Michael Chen</div>
+                            <div class="text-sm text-gray-500">Bright Smile Dental</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-lg font-bold text-primary">+420%</div>
+                                <div class="text-xs text-gray-500">Online Leads</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-secondary">$250K</div>
+                                <div class="text-xs text-gray-500">Annual Growth</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Launch & Implement Solutions</h3>
-                    <p>We execute everything seamlessly, from websites to AI-powered campaigns.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Track, Monitor & Fine-Tune</h3>
-                    <p>Ongoing optimization to maximize performance and ROI.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3>Celebrate Your Success</h3>
-                    <p>Growth, scaling, and continuous innovation!</p>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Working with Clixio has been a game-changer for our practice. Their comprehensive approach to digital marketing helped us establish a strong online presence and attract premium patients."</p>
+                    <div class="flex items-center">
+                        <img src="./images/happy-patient.jpg" alt="Dr. Emily Rodriguez" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <div class="font-semibold text-dark">Dr. Emily Rodriguez</div>
+                            <div class="text-sm text-gray-500">Elite Dental Care</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-lg font-bold text-primary">+350%</div>
+                                <div class="text-xs text-gray-500">Website Traffic</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-secondary">$320K</div>
+                                <div class="text-xs text-gray-500">Revenue Boost</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-background">
-            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Business growth" />
-            <div class="cta-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="cta-content">
-                <h2>Let's Grow Your Business – Book a Consultation</h2>
-                <p>Speak with a digital marketing expert today.</p>
-                <button class="cta-button primary large">SCHEDULE GROWTH CALL</button>
-                <div class="cta-features">
-                    <div class="cta-feature">
-                        <i class="fas fa-phone"></i>
-                        <span>30-min free call</span>
+    <section class="py-16 lg:py-24 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('./images/dental-clinic-interior.jpg');"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Ready to Grow Your Practice?
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-bold mb-6">Start Your Dental Marketing Success Story Today</h2>
+                <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Join hundreds of successful dental practices that have transformed their patient acquisition with our proven marketing strategies.
+                </p>
+                
+                <!-- Features -->
+                <div class="grid md:grid-cols-3 gap-6 mb-10">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check-circle text-xl mr-3"></i>
+                        <span class="font-medium">Free Marketing Audit</span>
                     </div>
-                    <div class="cta-feature">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Custom strategy</span>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check-circle text-xl mr-3"></i>
+                        <span class="font-medium">30-Day Money Back Guarantee</span>
                     </div>
-                    <div class="cta-feature">
-                        <i class="fas fa-rocket"></i>
-                        <span>Fast implementation</span>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check-circle text-xl mr-3"></i>
+                        <span class="font-medium">Dedicated Account Manager</span>
                     </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Get Your Free Audit Now
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300">
+                        Schedule a Call
+                    </button>
+                </div>
+
+                <div class="mt-8 flex items-center justify-center text-white/80">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    <span class="text-sm">100% Risk-Free - Cancel Anytime</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Clixio</h3>
-                    <div class="contact-info">
-                        <p>1600 Innovation Drive<br>
-                        Business Center, 4th Floor<br>
-                        Manhattan Beach, CA 90266</p>
-                        <p>(424) 842-4115</p>
-                        <p>hello@clixio.com</p>
+    <footer class="bg-dark text-white py-16" id="contact">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fas fa-tooth text-2xl text-primary"></i>
+                        <h3 class="text-2xl font-bold text-primary">Clixio</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        The premier dental marketing agency helping practices grow through proven digital marketing strategies and exceptional results.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary-dark transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#insights">Insights</a></li>
-                        <li><a href="#results">Results</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Dental SEO</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">PPC Advertising</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Website Design</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Social Media Marketing</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Reputation Management</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Let's Strategize on Your Growth Plan</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-300 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-primary mr-3"></i>
+                            <span class="text-gray-300">(555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span class="text-gray-300">hello@clixio.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mr-3 mt-1"></i>
+                            <span class="text-gray-300">123 Marketing Street<br>Digital City, DC 12345</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Clixio. All rights reserved.</p>
-                <div class="footer-cta">
-                    <span>BEST MARKETING RESOURCES 📖</span>
-                    <button class="footer-cta-button">FREE BOOK 🚀</button>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2024 Clixio. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">Cookie Policy</a>
                 </div>
             </div>
         </div>
@@ -376,4 +1096,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

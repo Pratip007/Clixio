@@ -1,6 +1,6 @@
-# Clixio - Digital Marketing Website
+# Clixio - Dental Marketing Website
 
-A modern, responsive website for Clixio digital marketing company, inspired by professional marketing agency designs with a vibrant orange, white, and blue color scheme.
+A modern, responsive website for Clixio dental marketing company, designed to help dental practices grow their patient base with conversion-first marketing strategies. Features a professional orange, white, and blue color scheme.
 
 ## 🎨 Color Scheme
 
