@@ -840,6 +840,55 @@ a:focus {
     }
 }
 
+/* Enhanced CTA Section Utilities */
+.bg-size-200 {
+    background-size: 200% 100%;
+}
+
+.hover\:bg-pos-100:hover {
+    background-position: 100% 0;
+}
+
+/* Premium gradient text effects */
+.gradient-text-premium {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-brand {
+    background: linear-gradient(135deg, #FF6B35 0%, #ff8c42 25%, #2196F3 75%, #1976d2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sophisticated hover effects for feature cards */
+.feature-card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Enhanced shadow effects */
+.shadow-premium {
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.shadow-premium-lg {
+    box-shadow: 
+        0 35px 60px -12px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(255, 107, 53, 0.15);
+}
+
 /* Button with icon */
 .btn-icon-left .icon {
     margin-right: 8px;
